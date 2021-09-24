@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/SpringAPI&amp;Angular.iml" filepath="$PROJECT_DIR$/.idea/SpringAPI&amp;Angular.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringAPI-Angular/SpringAPI-Angular.iml" filepath="$PROJECT_DIR$/SpringAPI-Angular/SpringAPI-Angular.iml" />
+    </modules>
+  </component>
+</project>

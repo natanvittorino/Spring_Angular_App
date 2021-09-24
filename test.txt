@@ -1,0 +1,88 @@
+
+
+
+{
+   "email": "daniel@getarrays.com",
+   "imageURL":"https://inglam.ru/img/2019/08/Daniel-Craig-USA-Today-2006-005.jpg",
+   "jobTitle": "javascript",
+   "name": "Daniel Craig",
+   "phoneNumber": "4570090332"
+}
+
+{
+   "email": "matthew@getarrays.com",
+   "imageURL":"https://cdn.nwmgroups.hu/s/img/i/1708/20170802matthew-mcconaughey-a-voros-szonyeges.jpg?w=800&h=1204&t=5",
+   "jobTitle": "python",
+   "name": "Matthew Mcconaughey",
+   "phoneNumber": "4570090333"
+}
+
+{
+   "email": "tom@getarrays.com",
+   "imageURL":"https://image.tmdb.org/t/p/original/mclHxMm8aPlCPKptP67257F5GPo.jpg",
+   "jobTitle": "golang",
+   "name": "Tom Hiddleston",
+   "phoneNumber": "4570090334"
+}
+
+{
+   "email": "sandra@getarrays.com",
+   "imageURL":"https://lipstiq.com/wp-content/uploads/2020/11/aedc7fd8f2fa424a6d94ac07f5567031f3-10-sandra-bullock.rsquare.w1200.jpg",
+   "jobTitle": "java",
+   "name": "Sandra Bullock",
+   "phoneNumber": "4570090335"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+        "id": 2,
+        "name": "Matthew Mcconaughey",
+        "email": "matthew@getarrays.com",
+        "jobTitle": "python",
+        "phoneNumber": "4570090333",
+        "imageUrl": null,
+        "employeeNumber": "3c351e94-81b2-47e7-a68b-4aeb706c27b8"
+    }
+    
+    
+    // IMPLEMENTATION 1
+    @GetMapping("/find/{id}")
+    public ResponseEntity<Employee> getEmployeeById (@PathVariable("id") Long id) {
+        Employee employees = (Employee) employeeService.findEmployeeById(id);
+        return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
+    
+    // IMPLEMENTATION 2
+    @GetMapping("/find/{id}")
+    public ResponseEntity<Employee> getEmployeeById (@PathVariable("id") Long id) {
+        employeeService.findEmployeeById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    
+    // FINAL METHOD
+    @GetMapping("/find/{id}")
+    public ResponseEntity<Employee> getEmployeeById (@PathVariable("id") Long id) {
+        Object getEmployeeById = employeeService.findEmployeeById(id);
+        return new ResponseEntity(getEmployeeById, HttpStatus.OK);
+    }
+    
+    
+    // Delete all employees methods
+    
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity<List<Employee>> deleteAllEmployees () {
+        employeeRepo.deleteAll();
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
